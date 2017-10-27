@@ -13,7 +13,8 @@ myApp.controller('GuessWhoController', function () {
     var guess = this;
 
     guess.peoples = [{name: 'Chris', github: 'christopher-black', display: false},
-        {name: 'Josh', github: 'joshnothum', display: false}];
+        {name: 'Josh', github: 'joshnothum', display: false},
+        {name: 'Kris', github: 'kdszafranski', display: false}];
 
     guess.checkthis = function () {
         console.log('this button works');
@@ -31,5 +32,5 @@ myApp.controller('GuessWhoController', function () {
     guess.nameShow = function (person) {
         person.display = !person.display;
 
-    }
+    };
 });
