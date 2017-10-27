@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- Most basic Angular app -->
-<html ng-app="myApp">
+<html>
 <!-- Angular has full control over the page -->
 
 <head>
@@ -10,18 +10,19 @@
     <script type="text/javascript" src="client.js"></script>
 </head>
 
-<body>
+<body ng-app="myApp">
     <!-- 2 Way Binding Example -->
     <!-- Similar to... var intro = what you type -->
     <!-- intro is an expression, could be {{intro + " tomato"}} or {{ 7 + 2 }} -->
-    <p>{{guesses}}</p>
-</body>
     <div ng-controller="GuessWhoController as guess">
-        <input type="text" ng-model="name">
-        <input type="text" ng-model="github">
-        <div ng-repeat="person in guess.instructors">
-            <p>Names: {{person}}</p>
+        <form name="github">
+    Name:    <input type="text" ng-model="guess.newPeoples.name"> 
+    GitHub:  <input type="text" ng-model="guess.newPeoples.gitHub">
+             <button type="submit" ng-click="guess.append()">Make it happen</button>
+        </form>     
+        <div ng-repeat="person in guess.peoples">
+            <p>Names: {{person.name}}</p>
         </div>
-        <button ng-click="guess.checkthis()">Submit</button>
     </div>
+</body>
 </html>

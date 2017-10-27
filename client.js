@@ -12,18 +12,21 @@ myApp.controller('WelcomeController', function () {
 myApp.controller('GuessWhoController', function () {
     var guess = this;
 
-    guess.instructors = [
-            {name: 'Chris',github: 'christopher-black'},
-            {name: 'Josh',github: 'josh-nothum'}
-    ];
+    guess.peoples = [{name: 'Chris',github: 'christopher-black', display: false},
+        {name: 'Josh',github: 'josh-nothum', display: false}];
+
     guess.checkthis = function () {
         console.log('this button works');
-      
-    guess.append = function () {
-        var person = {
-            name: input.name,
-            github: input.github
-        };
-    };   
     };
+    guess.append = function () {
+        var newPeoples = {
+           name: '',
+           gitHub: ''
+        };
+        guess.peoples.push(guess.newPeoples);
+        console.log('the next',guess.newPeoples);
+        console.log('these are new:',guess.peoples);
+        
+        
+    };   
 });
