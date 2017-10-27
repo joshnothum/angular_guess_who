@@ -17,11 +17,13 @@
     <div ng-controller="GuessWhoController as guess">
         <form name="github">
     Name:    <input type="text" ng-model="guess.newPeoples.name"> 
-    GitHub:  <input type="text" ng-model="guess.newPeoples.gitHub">
+    GitHub:  <input type="text" ng-model="guess.newPeoples.github">
              <button type="submit" ng-click="guess.append()">Make it happen</button>
         </form>     
         <div ng-repeat="person in guess.peoples">
-            <p>Names: {{person.name}}</p>
+            <img ng-src="https://github.com/{{person.github}}.png?size=80" ng-click="guess.nameShow(person)">
+            <div ng-show="person.display">Name: {{person.name}}
+                </div>
         </div>
     </div>
 </body>
