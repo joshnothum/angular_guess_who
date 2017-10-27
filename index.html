@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!-- Most basic Angular app -->
+<html ng-app="myApp">
+<!-- Angular has full control over the page -->
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="client.js"></script>
+</head>
+
+<body>
+    <!-- 2 Way Binding Example -->
+    <!-- Similar to... var intro = what you type -->
+    <!-- intro is an expression, could be {{intro + " tomato"}} or {{ 7 + 2 }} -->
+    <p>{{guesses}}</p>
+</body>
+    <div ng-controller="GuessWhoController as guess">
+        <input type="text" ng-model="name">
+        <input type="text" ng-model="github">
+        <div ng-repeat="person in guess.instructors">
+            <p>Names: {{person}}</p>
+        </div>
+        <button ng-click="guess.checkthis()">Submit</button>
+    </div>
+</html>
